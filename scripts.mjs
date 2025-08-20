@@ -1,4 +1,6 @@
+//============================================================================
 // Part 1: Humble Beginings
+
 const adventurer = {
     name: "Robin",
     health: 10,
@@ -84,20 +86,20 @@ class Character {
 // Take a look at our example below, and expand upon it with your own properties and methods. What else should an adventurer be able to do? What other properties should they have?
 // Answer: health, companion from the parent class
 
-class Adventurer extends Character {
-    constructor (name, health, companion, role) {
-    super(name, health, companion);
-    // Adventurers have specialized roles.
-    this.role = role;
-    // Every adventurer starts with a bed and 50 gold coins.
-    this.inventory.push("bedroll", "50 gold coins");
-    }
-    // Adventurers have the ability to scout ahead of them.
-    scout () {
-    console.log(`${this.name} is scouting ahead...`);
-    super.roll();
-    }
-    }
+// class Adventurer extends Character {
+//     constructor (name, health, companion, role) {
+//     super(name, health, companion);
+//     // Adventurers have specialized roles.
+//     this.role = role;
+//     // Every adventurer starts with a bed and 50 gold coins.
+//     this.inventory.push("bedroll", "50 gold coins");
+//     }
+//     // Adventurers have the ability to scout ahead of them.
+//     scout () {
+//     console.log(`${this.name} is scouting ahead...`);
+//     super.roll();
+//     }
+//     }
 
 
 // Next, create a Companion class with properties and methods specific to the companions.
@@ -115,17 +117,52 @@ class Companion extends Character {
 
 // Finally, change the declaration of Robin and the companions to use the new Adventurer and Companion classes. NOT CLEAR TO ME!
 
-const robin = new Adventurer ("Robin");
-console.log(`The new class BEFORE adding the relevant data for each character looks like the following:\n`, robin)
-robin.inventory = ["sword", "potion", "artifact"];
-robin.companion = new Companion("Leo");
-robin.companion.type = "Cat";
-robin.companion.companion = new Companion("Frank");
-robin.companion.companion.type = "Flea";
-robin.companion.companion.inventory = ["small hat", "sunglasses"];
+// const robin = new Adventurer ("Robin");
+// console.log(`The new class BEFORE adding the relevant data for each character looks like the following:\n`, robin)
+// robin.inventory = ["sword", "potion", "artifact"];
+// robin.companion = new Companion("Leo");
+// robin.companion.type = "Cat";
+// robin.companion.companion = new Companion("Frank");
+// robin.companion.companion.type = "Flea";
+// robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
-console.log(`The new class AFTER adding the relevant data for each character looks like the following:\n`, robin);
+// console.log(`The new class AFTER adding the relevant data for each character looks like the following:\n`, robin);
 
 //================================End of Part 3 ==============================
 
 // Part 4: Class Uniforms
+
+// Using the static keyword:
+// Add a static MAX_HEALTH property to the Character class, equal to 100.
+// Add a static ROLES array to the Adventurer class, with the values “Fighter”, “Healer” and “Wizard.// ” Feel free to add other roles, if you desire! Add a check to the constructor of the Adventurer class that ensures the given role matches one of these values.
+
+class Adventurer extends Character {
+    static MAX_HEALTH = 100;
+    static ROLES = ["Fighter", "Healer", "Wizard"];
+
+    constructor (name, health, companion, role) {
+    super(name, health, companion);
+    // Adventurers have specialized roles.
+    if (Adventurer.ROLES.includes(role)) {
+        this.role = role;
+    } else {
+        throw new Error ("Invalid role")
+    }
+
+    // Every adventurer starts with a bed and 50 gold coins.
+    this.inventory.push("bedroll", "50 gold coins");
+    }
+    // Adventurers have the ability to scout ahead of them.
+    scout () {
+    console.log(`${this.name} is scouting ahead...`);
+    super.roll();
+    }
+    }
+
+    console.log(Adventurer.MAX_HEALTH)
+    console.log(Adventurer.ROLES)
+
+//================================End of Part 4 ==============================
+
+// Part 5: Gather Your Party
+
