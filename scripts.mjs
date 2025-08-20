@@ -196,20 +196,10 @@ class AdventurerFactory {
    // Log the results of this “round” of the duel, including the rolls and current health values.
    // Repeat this process until one of the two adventurers reaches 50 health.
    // Log the winner of the duel: the adventurer still above 50 health.
-
-
-
-
-
 //================================End of Part 6 ==============================
 
 
 
 // Part 7: Adventure Forth
-
-
-
-
-
 //================================End of Part 7 ==============================
 
