@@ -145,8 +145,6 @@ class Adventurer extends Character {
     // Adventurers have specialized roles.
     if (Adventurer.ROLES.includes(role)) {
         this.role = role;
-    } else {
-        throw new Error ("Invalid role")
     }
 
     // Every adventurer starts with a bed and 50 gold coins.
@@ -159,10 +157,59 @@ class Adventurer extends Character {
     }
     }
 
-    console.log(Adventurer.MAX_HEALTH)
-    console.log(Adventurer.ROLES)
+    // console.log(Adventurer.MAX_HEALTH)
+    // console.log(Adventurer.ROLES)
 
 //================================End of Part 4 ==============================
 
-// Part 5: Gather Your Party
+// Part 5: Gather Your Party and Factories
+class AdventurerFactory {
+    constructor (role) {
+    this.role = role;
+    this.adventurers = [];
+    }
+    generate (name) {
+    const newAdventurer = new Adventurer(name, this.role);
+    this.adventurers.push(newAdventurer);
+    }
+    findByIndex (index) {
+    return this.adventurers[index];
+    }
+    findByName (name) {
+    return this.adventurers.find((a) => a.name === name);
+    }
+    }
+    const healers = new AdventurerFactory("Healer");
+    const robin = healers.generate("Robin");
+    
+    // console.log(healers);
+    // console.log(robin);
+
+
+//================================End of Part 5 ==============================
+
+// Part 6: Developing skills
+// Create an additional method, duel(), for the Adventurer class with the following functionality:
+   // Accept an Adventurer as a parameter.
+   // Use the roll() functionality to create opposing rolls for each adventurer.
+   // Subtract 1 from the adventurer with the lower roll.
+   // Log the results of this “round” of the duel, including the rolls and current health values.
+   // Repeat this process until one of the two adventurers reaches 50 health.
+   // Log the winner of the duel: the adventurer still above 50 health.
+
+
+
+
+
+//================================End of Part 6 ==============================
+
+
+
+// Part 7: Adventure Forth
+
+
+
+
+
+//================================End of Part 7 ==============================
 
