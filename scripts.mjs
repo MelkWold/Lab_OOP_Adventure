@@ -80,3 +80,48 @@ robin.companion.companion.roll();
 //================================End of Part 2 ==============================
 
 // Part 3: Class Features
+// Take a look at our example below, and expand upon it with your own properties and methods. What else should an adventurer be able to do? What other properties should they have?
+// Answer: health, companion from the parent class
+
+class Adventurer extends Character {
+    constructor (name, role) {
+    super(name);
+    super(health); // they need health from the Character class
+    super(companion); // they need companion from the Character class
+    // Adventurers have specialized roles.
+    this.role = role;
+    // Every adventurer starts with a bed and 50 gold coins.
+    this.inventory.push("bedroll", "50 gold coins");
+    }
+    // Adventurers have the ability to scout ahead of them.
+    scout () {
+    console.log(`${this.name} is scouting ahead...`);
+    super.roll();
+    }
+    }
+
+
+// Next, create a Companion class with properties and methods specific to the companions.
+class Companion extends Companion {
+    constructor (name, health, companion, inventory, role) {
+        super(name);
+        super(health); // they need health from the Character class
+        super(companion); // they need companion from the Character class
+        super(inventory)
+        this.role = role;
+        super.roll();
+    }
+}
+
+// Finally, change the declaration of Robin and the companions to use the new Adventurer and Companion classes. NOT CLEAR TO ME!
+
+const robin = new Adventurer ("Robin");
+console.log(`The new class BEFORE adding the relevant data for each character looks like the following:\n`, robin)
+robin.inventory = ["sword", "potion", "artifact"];
+robin.companion = new Companion("Leo");
+robin.companion.type = "Cat";
+robin.companion.companion = new Companion("Frank");
+robin.companion.companion.type = "Flea";
+robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+console.log(`The new class AFTER adding the relevant data for each character looks like the following:\n`, robin);
