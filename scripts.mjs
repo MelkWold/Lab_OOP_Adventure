@@ -1,5 +1,4 @@
-//============================================================================
-// Part 1: Humble Beginings
+//============================= Part 1: Humble Beginings ===============================================
 
 const adventurer = {
     name: "Robin",
@@ -44,9 +43,8 @@ adventurer.companion = {
 // adventurer.roll();
 // adventurer.roll();
 
-//================================End of Part 1 ==============================
+//================================ Part 2. Classy Fantasy ==============================
 
-// Part 2. Classy Fantasy
 class Character {
     constructor (name, health, inventory, roll) {
         this.name = name,
@@ -79,9 +77,7 @@ class Character {
 // robin.companion.roll();
 // robin.companion.companion.roll();
 
-//================================End of Part 2 ==============================
-
-// Part 3: Class Features
+//================================ Part 3: Class Features ==============================
 
 // Take a look at our example below, and expand upon it with your own properties and methods. What else should an adventurer be able to do? What other properties should they have?
 // Answer: health, companion from the parent class
@@ -128,9 +124,7 @@ class Companion extends Character {
 
 // console.log(`The new class AFTER adding the relevant data for each character looks like the following:\n`, robin);
 
-//================================End of Part 3 ==============================
-
-// Part 4: Class Uniforms
+//================================ Part 4: Class Uniforms ==============================
 
 // Using the static keyword:
 // Add a static MAX_HEALTH property to the Character class, equal to 100.
@@ -156,15 +150,13 @@ class Adventurer extends Character {
     super.roll();
     }
     }
+const melk = new Adventurer ("melk", 100, "Ringo", "Fighter");
+console.log(melk);
+melk.roll();
+//================================ Part 5: Gather Your Party and Factories ==============================
 
-    // console.log(Adventurer.MAX_HEALTH)
-    // console.log(Adventurer.ROLES)
-
-//================================End of Part 4 ==============================
-
-// Part 5: Gather Your Party and Factories
 class AdventurerFactory {
-    constructor (role) {
+    constructor (role, adventurers) {
     this.role = role;
     this.adventurers = [];
     }
@@ -180,15 +172,13 @@ class AdventurerFactory {
     }
     }
     const healers = new AdventurerFactory("Healer");
-    const robin = healers.generate("Robin");
+    const robin = healers.generate("Robin"); // I don't know how this works and what it does!!
     
-    // console.log(healers);
-    // console.log(robin);
+    console.log(healers);
 
 
-//================================End of Part 5 ==============================
+//================================ Part 6: Developing skills ==============================
 
-// Part 6: Developing skills
 // Create an additional method, duel(), for the Adventurer class with the following functionality:
    // Accept an Adventurer as a parameter.
    // Use the roll() functionality to create opposing rolls for each adventurer.
@@ -196,10 +186,14 @@ class AdventurerFactory {
    // Log the results of this “round” of the duel, including the rolls and current health values.
    // Repeat this process until one of the two adventurers reaches 50 health.
    // Log the winner of the duel: the adventurer still above 50 health.
-//================================End of Part 6 ==============================
+
+//     function duel(Adventurer) {
+//         super.roll()
+
+//         //... I need to finish this
+//    }
 
 
 
-// Part 7: Adventure Forth
-//================================End of Part 7 ==============================
+//================================ Part 7: Adventure Forth ==============================
 
